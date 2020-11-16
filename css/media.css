@@ -1,0 +1,20 @@
+    /********************* Extra Small Screens From 501px to 767px ****************/
+    
+    @media (max-width:767px) {
+        .mo-nav {
+            display: none;
+        }
+    }
+    /********************* Extra Small Screens From 0 to 500px ********************/
+    
+    @media (max-width: 500px) {}
+    /********************* Small Screens From 768px to 991px **********************/
+    
+    @media (min-width: 768px) and (max-width: 991px) {}
+    /********************* Medium Screens From 992px to 1199px ********************/
+    
+    @media (min-width: 992px)and (max-width: 1199px) {}
+    /********************* Large Screens From 1200px to 1509px ********************/
+    
+    @media (min-width: 1200px) {}
+    /********************* Extra Large Screens From 1510px to infinite ************/
