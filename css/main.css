@@ -44,6 +44,7 @@
     
     .mo-header {
         padding: 15px 0;
+        border-bottom: 1px solid #ededed;
     }
     
     .mo-header .social {
@@ -125,19 +126,13 @@
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        margin-left: 20px;
         cursor: pointer;
         display: none;
     }
     
-    html[dir=ltr] .rools .menu {
-        margin-left: 0;
-        margin-right: 20px;
-    }
-    
     .menu .menu-icon {
         font-size: 24px;
-        color: #000;
+        color: #131c86;
         transition: all 0.4s ease-in-out;
     }
     
@@ -172,6 +167,11 @@
     
     .mo-nav {
         background-color: #131c86;
+    }
+    
+    .mo-nav .close,
+    .mo-nav .page-language {
+        display: none;
     }
     
     .mo-nav .nav-list {
@@ -314,6 +314,10 @@
     .main-slider .main-item {
         position: relative;
         overflow: hidden;
+        width: 100%;
+    }
+    
+    .main-item .main-img {
         width: 100%;
     }
     
@@ -587,8 +591,16 @@
         transform: scale(1);
     }
     
-    .koto-products .swiper-container {
-        max-height: 250px;
+    .koto .koto-one,
+    .koto .koto-two {
+        height: 250px;
+        position: relative;
+    }
+    
+    .koto .koto-one .swiper-container,
+    .koto .koto-two .swiper-container {
+        height: 100%;
+        overflow: hidden;
     }
     
     .koto-products .swiper-button-prev,
@@ -630,7 +642,7 @@
     }
     
     .koto-products .swiper-button-next {
-        top: 270px;
+        top: 275px;
     }
     
     .koto-products .swiper-button-next::after {
@@ -643,12 +655,16 @@
     }
     
     .koto-logo .koto-logo-box {
-        max-width: 100%;
+        width: 100%;
         height: 100%;
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center;
+    }
+    
+    .koto-logo-box .koto-logo-img {
+        max-width: 100%;
     }
     /***************************** News & Gallary Section Start *******************/
     
@@ -744,6 +760,11 @@
         transition: all 0.4s ease-in-out;
     }
     
+    html[dir=ltr] .news-content .news-name {
+        font-size: 16px;
+        height: 45px;
+    }
+    
     .news-box .news-content .news-name:hover {
         color: #ff8d0b;
     }
@@ -789,6 +810,10 @@
         transform: scaleX(0);
         visibility: hidden;
     }
+    
+    .news-gallary .swiper-pagination {
+        display: none;
+    }
     /***************************** Footer Section Start ***************************/
     
     .footer {
@@ -832,6 +857,15 @@
         line-height: 2;
     }
     
+    .two .footer-heading .footer-link {
+        color: #fff;
+        text-decoration: none;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
     .footer-top .two .footer-row-list {
         display: flex;
         flex-direction: row;
@@ -864,6 +898,9 @@
         font-size: 16px;
         font-family: "st-roman";
         transition: all 0.4s ease-in-out;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
     }
     
     .info-list-li .info-link::before {
@@ -877,6 +914,7 @@
     html[dir=ltr] .info-list-li .info-link::before {
         margin-left: 0;
         margin-right: 15px;
+        transform: rotateY(180deg);
     }
     
     .info-list-li .info-link:hover {
@@ -885,10 +923,17 @@
     
     .footer-top .three .our-location {
         width: 100%;
+        overflow: hidden;
     }
     
     .our-location .map-img {
         max-width: 100%;
+        transform: scale(1.05);
+        transition: all 0.4s ease-in-out;
+    }
+    
+    .our-location:hover .map-img {
+        transform: scale(1);
     }
     
     .footer .footer-bottom {
@@ -923,6 +968,15 @@
         margin-right: 3px;
     }
     
+    .copyrights .last-p .tasawk {
+        margin-right: 3px;
+    }
+    
+    html[dir=ltr] .copyrights .last-p .tasawk {
+        margin-right: 0;
+        margin-left: 3px;
+    }
+    
     .footer-bottom .footer-icon-list {
         display: flex;
         flex-direction: row;
@@ -939,6 +993,14 @@
         margin-right: 20px;
     }
     
+    .footer-icon-list .footer-icon-li:last-child {
+        margin-left: 0;
+    }
+    
+    html[dir=ltr] .footer-icon-list .footer-icon-li:last-child {
+        margin-right: 0;
+    }
+    
     .footer-icon-li .footer-icon-link {
         color: rgba(255, 255, 255, 0.5);
         text-decoration: none;
@@ -948,6 +1010,147 @@
     
     .footer-icon-li .footer-icon-link:hover {
         color: rgba(255, 255, 255, 1);
+    }
+    /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                                                Branches page
+    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+    
+    .branches {
+        padding: 30px 0 100px 0;
+    }
+    
+    .branches .page-ref {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 50px;
+    }
+    
+    .page-ref .ref-link {
+        color: #a6a6a6;
+        text-decoration: none;
+        font-size: 14px;
+        font-family: "st-roman";
+        transition: all 0.4s ease-in-out;
+    }
+    
+    .page-ref .ref-link:hover {
+        color: #131c86;
+    }
+    
+    .page-ref .ref-link:first-child::after {
+        content: "/";
+        margin-right: 15px;
+        margin-left: 15px;
+    }
+    
+    .branches-content .branches-title {
+        color: #131c86;
+        text-align: center;
+        font-size: 30px;
+        font-family: "st-bold";
+        margin-bottom: 40px;
+    }
+    
+    .branches-content .branch {
+        width: 100%;
+        /* height: 170px; */
+        background-color: #f1f8fb;
+        padding: 30px 35px;
+        margin-bottom: 30px;
+    }
+    
+    .branch .branch-loc {
+        color: #131c86;
+        font-size: 18px;
+        font-family: "st-medium";
+        margin-bottom: 25px;
+    }
+    
+    .branch .map-phone {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    
+    .map-phone .branch-map {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-left: 100px;
+        margin-bottom: 15px;
+    }
+    
+    html[dir=ltr] .map-phone .branch-map {
+        margin-left: 0;
+        margin-right: 100px;
+    }
+    
+    .branch-map .branch-map-icon,
+    .branch-phone .branch-phone-icon,
+    .work-times .work-times-icon {
+        color: #ff8d0b;
+        margin-left: 20px;
+        font-size: 16px;
+    }
+    
+    html[dir=ltr] .branch-map .branch-map-icon {
+        margin-left: 0;
+        margin-right: 20px;
+    }
+    
+    .branch-phone .branch-phone-icon,
+    .work-times .work-times-icon {
+        margin-left: 15px;
+    }
+    
+    html[dir=ltr] .branch-phone .branch-phone-icon,
+    html[dir=ltr] .work-times .work-times-icon {
+        margin-left: 0;
+        margin-right: 15px;
+    }
+    
+    .branch-map .location-link,
+    .branch-phone .phone-link {
+        color: #666666;
+        text-decoration: none;
+        font-size: 16px;
+        font-family: "st-roman";
+        transition: all 0.4s ease-in-out;
+        position: relative;
+    }
+    
+    .branch-map .location-link:hover,
+    .branch-phone .phone-link:hover {
+        color: #379d47;
+    }
+    
+    .branch-map .location-link::after,
+    .branch-phone .phone-link::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 1px;
+        background-color: #379d47;
+        transform: scaleX(0);
+        visibility: hidden;
+        transition: all 0.4s ease-in-out;
+    }
+    
+    .branch-map .location-link:hover::after,
+    .branch-phone .phone-link:hover::after {
+        transform: scaleX(1);
+        visibility: visible;
+    }
+    
+    .branch .work-times {
+        margin-bottom: 0;
+        color: #666666;
+        text-decoration: none;
+        font-size: 16px;
+        font-family: "st-roman";
     }
     /*==================================================================================
                                     Page Overlay
@@ -962,34 +1165,10 @@
         cursor: pointer;
         display: none;
         z-index: 9999;
-        background-color: transparent;
+        background-color: rgba(0, 0, 0, 0.7);
     }
     
     .overlay-box2 {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        cursor: pointer;
-        display: none;
-        z-index: 9999;
-        background-color: rgba(0, 0, 0, 0.7);
-    }
-    
-    .overlay-box3 {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        cursor: pointer;
-        display: none;
-        z-index: 9999;
-        background-color: rgba(0, 0, 0, 0.7);
-    }
-    
-    .overlay-box4 {
         position: fixed;
         top: 0;
         left: 0;

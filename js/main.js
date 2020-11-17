@@ -115,6 +115,7 @@ $(document).ready(function() {
             },
         }
     })
+    mySwiper2.removeSlide(0);
 
     var mySwiper3 = new Swiper('.koto-two .swiper-container', {
         direction: 'vertical',
@@ -152,6 +153,62 @@ $(document).ready(function() {
             },
         }
     })
+    mySwiper3.removeSlide(0);
+    var mySwiper4 = new Swiper('.news-gallary .swiper-container', {
+        direction: 'horizontal',
+        loop: true,
+        spaceBetween: 30,
+        slidesPerView: 3,
+        updateOnWindowResize: true,
+        autoplay: false,
+        allowTouchMove: false,
+
+        breakpoints: {
+            0: {
+                slidesPerView: 1,
+                spaceBetween: 30,
+                allowTouchMove: true,
+                autoplay: {
+                    delay: 4000,
+                }
+            },
+            500: {
+                slidesPerView: 1,
+                spaceBetween: 30,
+                allowTouchMove: true,
+                autoplay: {
+                    delay: 4000,
+                }
+            },
+            768: {
+                slidesPerView: 2,
+                spaceBetween: 30,
+                allowTouchMove: true,
+                autoplay: {
+                    delay: 4000,
+                }
+            },
+            992: {
+                slidesPerView: 3,
+                spaceBetween: 30,
+            },
+            1200: {
+                slidesPerView: 3,
+                spaceBetween: 30,
+            },
+        },
+        pagination: {
+            el: '.news-gallary .swiper-pagination',
+            clickable: true,
+        },
+
+    });
+
+    if (window.innerWidth <= 991) {
+        setInterval(() => {
+            mySwiper4.slideNext();
+        }, 4000);
+    }
 
 
     // Footer Section Start --------------------------------------------------------------------------------------------------------------------
@@ -173,59 +230,38 @@ $(document).ready(function() {
         if (x.hasClass("collapse")) {
             $(".first .footer-heading .footer-link").addClass("rotate")
             $(".first .footer-heading .footer-link").removeClass("rotate-reverse")
-            $(".second .footer-heading .footer-link").removeClass("rotate")
-            $(".second .footer-heading .footer-link").addClass("rotate-reverse")
-            $(".last .footer-heading .footer-link").removeClass("rotate")
-            $(".last .footer-heading .footer-link").addClass("rotate-reverse")
         }
     });
     $(".first .footer-heading .footer-link").click(function() {
         var x = $(".first .slide-list")
-        if (x.hasClass("in")) {
+        if (x.hasClass("show")) {
             $(".first .footer-heading .footer-link").removeClass("rotate")
             $(".first .footer-heading .footer-link").addClass("rotate-reverse")
         }
     });
 
-    // Second Collapse ---------------------------
-    $(".second .footer-heading .footer-link").click(function() {
-        var x = $(".second .slide-list")
-        if (x.hasClass("collapse")) {
-            $(".second .footer-heading .footer-link").addClass("rotate")
-            $(".second .footer-heading .footer-link").removeClass("rotate-reverse")
-            $(".first .footer-heading .footer-link").removeClass("rotate")
-            $(".first .footer-heading .footer-link").addClass("rotate-reverse")
-            $(".last .footer-heading .footer-link").removeClass("rotate")
-            $(".last .footer-heading .footer-link").addClass("rotate-reverse")
-        }
-    });
-    $(".second .footer-heading .footer-link").click(function() {
-        var x = $(".second .slide-list")
-        if (x.hasClass("in")) {
-            $(".second .footer-heading .footer-link").removeClass("rotate")
-            $(".second .footer-heading .footer-link").addClass("rotate-reverse")
-        }
+    if ($(window).width() <= 991) {
+        $(".products-box").click(function() {
+            $(".products-box .mo-nav-link").toggleClass("rotate");
+            $(".products-box .products-list").css("transition", "none");
+            $(".products-box .products-list").slideToggle(300);
+        });
+    }
+
+    //This is to Open Side Menu in Small Screens
+    $(".menu").click(function() {
+        $("body").addClass("overflow")
+        $(".menu .menu-icon").removeClass("open-menu")
+        $(".menu .menu-icon").addClass("close-menu")
+        $(".mo-nav").addClass("menu-open");
+        $(".overlay-box").fadeIn(500);
     });
 
-    // Last Collapse ---------------------------
-    $(".last .footer-heading .footer-link").click(function() {
-        var x = $(".last .slide-list")
-        if (x.hasClass("collapse")) {
-            $(".last .footer-heading .footer-link").addClass("rotate")
-            $(".last .footer-heading .footer-link").removeClass("rotate-reverse")
-            $(".first .footer-heading .footer-link").removeClass("rotate")
-            $(".first .footer-heading .footer-link").addClass("rotate-reverse")
-            $(".second .footer-heading .footer-link").removeClass("rotate")
-            $(".second .footer-heading .footer-link").addClass("rotate-reverse")
-        }
+    $(".close,.overlay-box").click(function() {
+        $("body").removeClass("overflow")
+        $(".menu .menu-icon").addClass("open-menu")
+        $(".menu .menu-icon").removeClass("close-menu")
+        $(".mo-nav").removeClass("menu-open");
+        $(".overlay-box").fadeOut(500);
     });
-    $(".last .footer-heading .footer-link").click(function() {
-        var x = $(".last .slide-list")
-        if (x.hasClass("in")) {
-            $(".last .footer-heading .footer-link").removeClass("rotate")
-            $(".last .footer-heading .footer-link").addClass("rotate-reverse")
-        }
-    });
-
-
 });
