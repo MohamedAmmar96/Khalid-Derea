@@ -1094,9 +1094,15 @@
         font-size: 16px;
     }
     
-    html[dir=ltr] .branch-map .branch-map-icon {
+    html[dir=ltr] .branch-map .branch-map-icon,
+    html[dir=ltr] .branch-phone .branch-phone-icon,
+    html[dir=ltr] .work-times .work-times-icon {
         margin-left: 0;
         margin-right: 20px;
+    }
+    
+    html[dir=ltr] .branch-phone .branch-phone-icon {
+        transform: rotateY(180deg);
     }
     
     .branch-phone .branch-phone-icon,
