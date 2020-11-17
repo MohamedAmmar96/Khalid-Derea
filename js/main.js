@@ -8,7 +8,6 @@ $(window).on('load', function() {
 })
 
 
-
 // // Scroll To Top Button 
 // var scrollButton = $(".scroll-top");
 // $(window).scroll(function() {
@@ -34,7 +33,8 @@ var wow = new WOW({
 });
 wow.init();
 
-
+// init Swiper:
+const swiper = new Swiper();
 
 $(document).ready(function() {
 
@@ -80,80 +80,82 @@ $(document).ready(function() {
     })
 
     var mySwiper2 = new Swiper('.koto-one .swiper-container', {
-        direction: 'vertical',
-        loop: true,
-        spaceBetween: 30,
-        slidesPerView: 1,
-        updateOnWindowResize: true,
-        autoplay: {
-            delay: 4000,
-        },
-        navigation: {
-            nextEl: '.koto-one .swiper-button-next',
-            prevEl: '.koto-one .swiper-button-prev',
-        },
-        breakpoints: {
-            0: {
-                slidesPerView: 1,
-                spaceBetween: 30,
+            direction: 'vertical',
+            // loop: true,
+            spaceBetween: 30,
+            slidesPerView: 1,
+            updateOnWindowResize: true,
+            autoplay: {
+                delay: 4000,
             },
-            500: {
-                slidesPerView: 1,
-                spaceBetween: 30,
+            navigation: {
+                nextEl: '.koto-one .swiper-button-next',
+                prevEl: '.koto-one .swiper-button-prev',
             },
-            768: {
-                slidesPerView: 1,
-                spaceBetween: 30,
-            },
-            992: {
-                slidesPerView: 1,
-                spaceBetween: 30,
-            },
-            1200: {
-                slidesPerView: 1,
-                spaceBetween: 30,
-            },
-        }
-    })
-    mySwiper2.removeSlide(0);
+            breakpoints: {
+                0: {
+                    slidesPerView: 1,
+                    spaceBetween: 30,
+                },
+                500: {
+                    slidesPerView: 1,
+                    spaceBetween: 30,
+                },
+                768: {
+                    slidesPerView: 1,
+                    spaceBetween: 30,
+                },
+                992: {
+                    slidesPerView: 1,
+                    spaceBetween: 30,
+                },
+                1200: {
+                    slidesPerView: 1,
+                    spaceBetween: 30,
+                },
+            }
+        })
+        // mySwiper2.removeSlide(0);
 
     var mySwiper3 = new Swiper('.koto-two .swiper-container', {
-        direction: 'vertical',
-        loop: true,
-        spaceBetween: 30,
-        slidesPerView: 1,
-        updateOnWindowResize: true,
-        autoplay: {
-            delay: 4000,
-        },
-        navigation: {
-            nextEl: '.koto-two .swiper-button-next',
-            prevEl: '.koto-two .swiper-button-prev',
-        },
-        breakpoints: {
-            0: {
-                slidesPerView: 1,
-                spaceBetween: 30,
+            direction: 'vertical',
+            // loop: true,
+            spaceBetween: 30,
+            slidesPerView: 1,
+            updateOnWindowResize: true,
+            autoplay: {
+                delay: 4000,
             },
-            500: {
-                slidesPerView: 1,
-                spaceBetween: 30,
+            navigation: {
+                nextEl: '.koto-two .swiper-button-next',
+                prevEl: '.koto-two .swiper-button-prev',
             },
-            768: {
-                slidesPerView: 1,
-                spaceBetween: 30,
-            },
-            992: {
-                slidesPerView: 1,
-                spaceBetween: 30,
-            },
-            1200: {
-                slidesPerView: 1,
-                spaceBetween: 30,
-            },
-        }
-    })
-    mySwiper3.removeSlide(0);
+            breakpoints: {
+                0: {
+                    slidesPerView: 1,
+                    spaceBetween: 30,
+                },
+                500: {
+                    slidesPerView: 1,
+                    spaceBetween: 30,
+                },
+                768: {
+                    slidesPerView: 1,
+                    spaceBetween: 30,
+                },
+                992: {
+                    slidesPerView: 1,
+                    spaceBetween: 30,
+                },
+                1200: {
+                    slidesPerView: 1,
+                    spaceBetween: 30,
+                },
+            }
+        })
+        // mySwiper3.removeSlide(0);
+
+
     var mySwiper4 = new Swiper('.news-gallary .swiper-container', {
         direction: 'horizontal',
         loop: true,
