@@ -298,15 +298,7 @@
             margin-top: 0px;
         }
         .footer-top .footer-heading::after {
-            right: 50%;
-            transform: translateX(50%);
-            bottom: -10px;
-        }
-        html[dir=ltr] .footer-top .footer-heading::after {
-            right: auto;
-            left: 50%;
-            transform: translateX(-50%);
-            bottom: -10px;
+            display: none;
         }
         .two .footer-heading {
             margin-right: 40px;
@@ -745,15 +737,7 @@
             margin-top: 0px;
         }
         .footer-top .footer-heading::after {
-            right: 50%;
-            transform: translateX(50%);
-            bottom: -10px;
-        }
-        html[dir=ltr] .footer-top .footer-heading::after {
-            right: auto;
-            left: 50%;
-            transform: translateX(-50%);
-            bottom: -10px;
+            display: none;
         }
         .two .footer-heading {
             margin-right: 40px;
